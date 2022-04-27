@@ -1,0 +1,51 @@
+This file describes a general order for how variables and methods will be displayed in each class, along with other aspects:
+    *** The numbering describes how the ordering works from top to bottom
+
+*) VARIABLE, METHOD, NESTED CLASS ORDER (overall order in a class)
+    1) Variables
+    2) Methods
+        ~ Constructors - no specific order for which constructor comes first, second, etc.
+        ~ All other methods
+    3) Nested Classes
+
+A) VARIABLES ORDER
+    1) PUBLIC types first, followed by PROTECTED, followed by PRIVATE
+    2) STATIC types first, followed by instance types
+    3) Alphabetically ordered if key words above are equivalent between two variables
+* A PRIVATE static variable will come before PUBLIC instance variable
+* FINAL keyword not ordered in any way
+* Data types (primitive/ non-primitive) not ordered in any way
+
+EXAMPLE:
+    public static int var1;
+    private static final Object var2;
+    public String final myVar;
+    public boolean yourVar;     // notice ABC order between this var and the one above
+    private double var5;
+
+B) METHOD ORDER
+    1) PUBLIC types first, followed by PROTECTED, followed by PRIVATE
+        * EXCEPTION: The main method will always be at the bottom, after all of the class's other methods
+        * EXCEPTION: All constructors will be placed at the top, before all of the class's other methods
+    2) STATIC types first, followed by instance types
+    3) Alphabetically ordered if key words above are equivalent between two variables
+* Method parameters are not listed in any order, nor do they affect the method's placement in the class
+* A PRIVATE static method will come before PUBLIC instance method
+* FINAL keyword not ordered in any way
+
+EXAMPLE:
+    public static int method1(){}
+    private static final Object method2(boolean flag, String text){}
+    public String final myMethod(int i){}
+    public boolean yourMethod(int a){}     // notice ABC order between this var and the one above
+    private double method5();
+
+C) NESTED CLASS ORDER
+    1) PUBLIC types first, followed by PROTECTED, followed by PRIVATE
+    2) STATIC types first, followed by instance types
+    3) Alphabetically ordered if key words above are equivalent between two variables
+* A PRIVATE static class will come before PUBLIC instance class
+* FINAL keyword not ordered in any way
+
+EXAMPLE:
+    * same as the examples for variables and methods
